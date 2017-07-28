@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.ng-cli.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc",
+    "module": "commonjs",
+    "target": "es5",
+    "types": [
+      "cucumber",
+      "jasmine",
+      "node"
+    ]
+  },
+  "include": [
+    "protractor.cucumber.conf.ts",
+    "e2e/support/*.ts",
+    "e2e/**/*.steps.ts"
+  ]
+}
