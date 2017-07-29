@@ -1,17 +1,19 @@
-import { NgModule }         from '@angular/core';
-import { IonicModule }      from 'ionic-angular';
-import { ComponentsModule } from '../components';
-import { ClickerList }      from './clickerList/clickerList';
-import { Page2 }            from './page2/page2';
+import { NgModule } from '@angular/core';
+import { IonicModule } from 'ionic-angular';
+import { Page2 } from './page2/page2';
+import { ConnectPage } from './connect/connect';
+import { OrdersPage } from './orders/orders';
 
 @NgModule({
   declarations: [
-    ClickerList,
     Page2,
+    ConnectPage,
+    OrdersPage
   ],
-  imports: [ IonicModule, ComponentsModule ],
+  imports: [ IonicModule ],
   exports: [
-    ClickerList,
+    ConnectPage,
+    OrdersPage
     // Page2,
   ],
   entryComponents: [],
