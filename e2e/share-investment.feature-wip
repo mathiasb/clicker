@@ -1,0 +1,20 @@
+Feature: Share investments on Facebook
+  As a Leading Investor
+  I should be able to share my investments on Facebook
+  In order to inspire and tip my close friends and relatives
+
+    Scenario: Share investment log entry to select friends on Facebook
+     Given I have an investment in MSFT recorded and a linked Facebook account
+     When I click Facebook share ON MSFT on the page for all investments
+     Then I share it with the comment as text and link to the stock ticker as message to friends
+
+    Scenario: Share investment log entry to timeline on Facebook
+     Given I have an investment in MSFT recorded and a linked Facebook account
+     When I click Facebook share ON MSFT on the page for all investments
+     Then I share it with the comment as text and link to the stock ticker as A post on the timeline
+
+    Scenario: Share multiple investment log entries to timeline on Facebook
+
+    Scenario: Un-share a log entry on Facebook
+
+    Scenario: Update a shared log-entry on Facebook and alert those who liked the original post

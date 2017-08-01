@@ -1,0 +1,46 @@
+Feature: Record an investment transaction to a log
+  As a Leading Investor
+  I should be able to record my investments to a log
+  In order to see how they perform and to be able to share them with my followers
+
+  @CucumberScenario
+  Scenario: Add investment in MSFT share
+    Given I find MSFT in investable instruments list on the Add page
+    When I fill in price, date and comment field
+    And press Save
+    Then the investment is saved to my log
+    And I see a list of all my log entries
+
+  @CucumberScenario
+  Scenario: Remove MSFT investment log entry
+    Given I have added some investments
+    And I am at the list page
+    When I swipe the MSFT entry and press the delete entry button
+    Then I get asked “are you sure? Yes/No”
+    And if I press “Yes” then the entry is removed from the app
+    And I see a list of all my log entries without the MSFT one I removed
+
+  @CucumberScenario
+  Scenario: Change MSFT investment log entry to different price and date
+    Given I have added some investments
+    And I have clicked an the MSFT to show the investment entry page
+    When I change date and price
+    And press Save
+    Then the investment entry is updated
+    And I see a list of all my log entries with the updated MSFT entry
+
+  @CucumberScenario
+  Scenario: Show MSFT investment log entry without changing it
+    Given I have added some investments
+    And I have clicked an the MSFT to show the investment entry page
+    And when nothing has been changed I can only Remove or Cancel
+    When I press Cancel or the Back button
+    Then I see a list of all my log entries with the same MSFT entry
+
+  @CucumberScenario
+  Scenario: Show all log entries
+    Given I have added some investments
+    And I am at the list page
+    When I choose default sorting of entries
+    Then the list is shown sorted by date newest first
+    And every entry shows instrument, date, price, comment

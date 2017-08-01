@@ -1,0 +1,26 @@
+Feature: Manage my details and social network accounts
+  As a user
+  I should be able to save my details and settings
+  In order to have good control over what information I share with whom
+
+  Scenario: Create account with facebook user jazzyjeff09
+    Given I don’t have an app account and I do have a Facebook account jazzyjeff09 and I am at the register page
+    When I click the “continue with Facebook” button
+    Then I authenticate with Facebook with access to friend list and possibility to post
+    And if I didn’t have an Experience level set before it get set to the default value Beginner Investor
+
+  Scenario: Show account details for user jazzyjeff09
+    Given I have registered an account with Facebook for jazzyjeff09
+    When I view the account page
+    Then I see the icon for Facebook with name and picture and an “unlink” button
+
+  Scenario: Delete account for Facebook user jazzyjeff09
+    Given I view the account page for the user jazzyjeff09
+    When I click the “unlink” button
+    Then the credentials for Facebook is deleted and the page doesn’t show Facebook info
+
+  Scenario: Update account detail to change experience level for user jazzyjeff09
+    Given I have registered an account with Facebook for jazzyjeff09
+    When I change experience level on the account details page
+    Then I get a modal to ask ‘are you sure? Yes/No’
+    And when I press Yes the account details page show the new level
