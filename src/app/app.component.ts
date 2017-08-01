@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { ConnectPage, Page2 } from '../pages';
+import { ConnectPage, OrdersPage, TabsPage, DashboardPage, ConnectDonePage } from '../pages';
 
 @Component({
   templateUrl: './app.html',
@@ -26,13 +26,16 @@ export class ZingAppComponent {
     this.splash = splash;
     this.status = status;
 
-    this.rootPage = ConnectPage;
+    this.rootPage = TabsPage;
     this.initializeApp();
 
     // set our app's pages
     this.pages = [
+      { title: 'Tabs', component: TabsPage },
       { title: 'Connect', component: ConnectPage },
-      { title: 'Sales', component: Page2 },
+      { title: 'Sales', component: OrdersPage },
+      { title: 'Analytics', component: DashboardPage },
+      { title: 'ConnectDone', component: ConnectDonePage },
     ];
   }
 

@@ -1,24 +1,14 @@
+/* tslint:disable:component-selector component-class-suffix */
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the OrdersPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-@IonicPage()
 @Component({
   selector: 'page-orders',
   templateUrl: 'orders.html',
 })
 export class OrdersPage {
+  public title: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor() {
+    this.title = 'Sales';
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad OrdersPage');
-  }
-
 }

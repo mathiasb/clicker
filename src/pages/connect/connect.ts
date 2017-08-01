@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   templateUrl: 'connect.html',
 })
 export class ConnectPage {
+  public title: string;
 
+  constructor() {
+    this.title = 'Connect';
+  }
+
+  onConnectTictail() {
+    alert('Connecting to Tictail at http://tictail.com');
+  }
 }
