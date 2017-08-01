@@ -1,5 +1,6 @@
 /* tslint:disable:component-selector component-class-suffix */
 import { Component } from '@angular/core';
+import { ConnectService } from '../../services';
 
 @Component({
   selector: 'page-connect',
@@ -8,11 +9,11 @@ import { Component } from '@angular/core';
 export class ConnectPage {
   public title: string;
 
-  constructor() {
+  constructor(private connectService: ConnectService) {
     this.title = 'Connect';
   }
 
   onConnectTictail() {
-    alert('Connecting to Tictail at http://tictail.com');
+    alert('Connecting to Tictail at ' + this.connectService.connectToTictailUrl());
   }
 }

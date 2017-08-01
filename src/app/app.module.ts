@@ -14,8 +14,7 @@ import {
   TabsPage
  } from '../pages';
 import {
-  ClickersService,
-  StorageService
+  ConnectService
 } from '../services';
 
 @NgModule({
@@ -40,8 +39,7 @@ import {
   providers: [
     StatusBar,
     SplashScreen,
-    ClickersService,
-    StorageService,
+    ConnectService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   ],
 })
